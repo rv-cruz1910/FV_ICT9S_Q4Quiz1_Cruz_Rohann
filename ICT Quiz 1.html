@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            text-align: center;
+            background-image: url(https://wallpaperaccess.com/full/12721045.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+                    }
+        .container {
+            background-color: red;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            padding: 20px;
+            margin: 0 auto;
+        }
+        input[type="number"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: black;
+            color: white;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: white;
+        }
+
+        p {
+            color: blue
+
+        }
+    </style>
+</head>
+<body>
+<img url: https://cdn0.iconfinder.com/data/icons/dieting-filled-line/64/Body_Mass_Index_BMI_nutrition_healthy_diet_healthcare-512.png>
+<div class="container">
+<h1>BMI Calculator</h1></div>
+<br>
+ <center><img src="https://clipground.com/images/bmi-logo-png-4.png" height="100px" width="200px"></center>
+<h2> What is BMI? </h2>
+<p>Based on height and weight, the body mass index (BMI) calculates the amount of body fat.  It makes an estimate using an equation rather than a direct measurement of body fat.  A person's BMI can be used to assess if their weight is healthy or unhealthy.</p>
+<h2>Calculate your BMI!</h2>
+<br>
+    <div class="container">
+        <h2>BMI Calculator</h2>
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" placeholder="Enter weight in kg" required>
+        
+        <label for="height">Height (m):</label>
+        <input type="number" id="height" step="0.01" placeholder="Enter height in meters" required>
+        
+        <button onclick="calculateBMI()">Calculate BMI</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateBMI() {
+            var weight = document.getElementById('weight').value;
+            var height = document.getElementById('height').value;
+            
+            if (weight && height) {
+                var bmi = weight / (height * height);
+                var bmiRounded = bmi.toFixed(2);
+                var message = "Your BMI is: " + bmiRounded;
+
+                var category = "";
+
+                if (bmi < 18.5) {
+                    category = "You are underweight.";
+                } else if (bmi < 24.9) {
+                    category = "You have a normal weight.";
+                } else if (bmi < 29.9) {
+                    category = "You are overweight.";
+                } else {
+                    category = "You are obese.";
+                }
+
+                document.getElementById('result').innerHTML = message + "<br>" + category;
+            } else {
+                document.getElementById('result').innerHTML = "Please enter valid weight and height!";
+            }
+        }
+    </script>
+     <br><br>
+    <center>
+        <a href="https://docs.google.com/document/d/1PY5qlMT7hjejHHpNR8CQCcrc3aX8koCiLMSIAVE47_Q/edit?tab=t.0" target="_blank" style="color: white; font-weight: bold;">
+            Sources
+        </a>
+    </center>
+</body>
+</html>
+</body>
+</html>
